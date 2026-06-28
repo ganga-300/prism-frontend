@@ -134,6 +134,57 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section id="about" className="px-6 py-20 max-w-5xl mx-auto grid sm:grid-cols-2 gap-10 items-start">
+        <div>
+          <p className="text-xs font-medium text-ink-muted tracking-wide uppercase mb-2">
+            Our approach
+          </p>
+          <h2 className="font-serif text-3xl text-ink mb-6">
+            We don&apos;t guess. We show our evidence.
+          </h2>
+          <p className="text-ink-muted">
+            Most tools give you a confidence score and call it a day. We
+            don&apos;t — because a number can&apos;t tell you why. Instead,
+            Prism shows you exactly what was verified, what looks suspicious,
+            and what we simply couldn&apos;t check. You decide, with the full
+            picture.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-3">
+          <div className="bg-card border border-border-soft rounded-md p-4">
+            <p className="text-sm font-medium text-verified mb-2">● Verified</p>
+            <p className="text-sm text-ink-muted">
+              Company has hired 11 people since 2020
+            </p>
+            <p className="text-sm text-ink-muted">
+              LinkedIn page matches the company name
+            </p>
+          </div>
+
+          <div className="bg-card border border-border-soft rounded-md p-4">
+            <p className="text-sm font-medium text-suspected mb-2">● Suspected</p>
+            <p className="text-sm text-ink-muted">
+              Company name doesn&apos;t match its own description
+            </p>
+            <p className="text-sm text-ink-muted">
+              Listing has the same text as another posting from 4 months ago
+            </p>
+          </div>
+
+          <div className="bg-card border border-border-soft rounded-md p-4">
+            <p className="text-sm font-medium text-unchecked mb-2">● Could not check</p>
+            <p className="text-sm text-ink-muted">
+              No LinkedIn presence found for this recruiter
+            </p>
+            <p className="text-sm text-ink-muted">
+              Perks offered by the company
+            </p>
+          </div>
+        </div>
+      </section>
+      
     </main>
   );
 }
