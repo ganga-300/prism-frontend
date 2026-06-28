@@ -97,6 +97,43 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="bg-strip px-6 py-20">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-xs font-medium text-ink-muted tracking-wide uppercase mb-2">
+            What we check
+          </p>
+          <h2 className="font-serif text-3xl text-ink mb-10">
+            Three investigations. One honest answer.
+          </h2>
+
+          <div className="grid sm:grid-cols-3 gap-4">
+            <div className="bg-card border border-border-soft rounded-md p-6">
+              <h3 className="font-medium text-ink mb-2">Posting history</h3>
+              <p className="text-sm text-ink-muted">
+                Finds when a listing was actually first posted, and whether
+                it's been quietly reposted to look new.
+              </p>
+            </div>
+
+            <div className="bg-card border border-border-soft rounded-md p-6">
+              <h3 className="font-medium text-ink mb-2">Duplicate detection</h3>
+              <p className="text-sm text-ink-muted">
+                Checks if the same listing — sometimes with stipend or
+                requirements quietly changed — appears elsewhere.
+              </p>
+            </div>
+
+            <div className="bg-card border border-border-soft rounded-md p-6">
+              <h3 className="font-medium text-ink mb-2">Company investigation</h3>
+              <p className="text-sm text-ink-muted">
+                Looks at the company's real hiring history, online presence,
+                and whether anything about their profile doesn't add up.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
