@@ -60,6 +60,43 @@ export default function Home() {
         <span className="mx-3">·</span>
         <span>Some postings are reused across platforms with different dates</span>
       </div>
+
+      <section id="how-it-works" className="px-6 py-20 max-w-5xl mx-auto">
+        <p className="text-xs font-medium text-ink-muted tracking-wide uppercase mb-2">
+          How it works
+        </p>
+        <h2 className="font-serif text-3xl text-ink mb-10">
+          Three checks before you apply.
+        </h2>
+
+        <div className="grid sm:grid-cols-3 gap-4">
+          <div className="bg-card border border-border-soft rounded-md p-6">
+            <p className="text-3xl font-serif text-border-soft mb-4">01</p>
+            <h3 className="font-medium text-ink mb-2">Paste any internship URL</h3>
+            <p className="text-sm text-ink-muted">
+              Works with Internshala internship listings.
+            </p>
+          </div>
+
+          <div className="bg-card border border-border-soft rounded-md p-6">
+            <p className="text-3xl font-serif text-border-soft mb-4">02</p>
+            <h3 className="font-medium text-ink mb-2">Three independent checks run</h3>
+            <p className="text-sm text-ink-muted">
+              We trace the posting's real history, check for duplicate
+              listings, and investigate the company itself.
+            </p>
+          </div>
+
+          <div className="bg-card border border-border-soft rounded-md p-6">
+            <p className="text-3xl font-serif text-border-soft mb-4">03</p>
+            <h3 className="font-medium text-ink mb-2">Get a clear answer</h3>
+            <p className="text-sm text-ink-muted">
+              Worth applying, verify first, or skip — with the specific
+              evidence behind it.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
