@@ -184,6 +184,35 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="bg-ink text-cream px-6 py-24 text-center">
+        <h2 className="font-serif text-4xl mb-3">Know before you apply.</h2>
+        <p className="text-cream/70 mb-8">
+          Paste a URL. Get a clear answer in under a minute.
+        </p>
+        <button className="bg-cream text-ink font-medium px-6 py-3 rounded-md">
+          Analyze an internship →
+        </button>
+      </section>
+
+      <footer className="px-6 py-8 flex items-center justify-between border-t border-border-soft">
+        <div>
+          <div className="flex items-center gap-2 mb-1">
+            <div
+              className="w-0 h-0 border-l-[6px] border-r-[6px] border-b-[10px] border-l-transparent border-r-transparent border-b-ink"
+            />
+            <span className="font-sans font-medium text-ink text-sm">Prism</span>
+          </div>
+          <p className="text-sm text-ink-muted">
+            Built by a student tired of getting ghosted.
+          </p>
+        </div>
+        <div className="flex gap-6 text-sm text-ink-muted">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">GitHub</a>
+        </div>
+      </footer>
       
     </main>
   );
