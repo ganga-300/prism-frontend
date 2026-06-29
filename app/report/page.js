@@ -80,24 +80,25 @@ export default function ReportPage() {
 
   const style = verdictStyles[verdict.worth_applying] || verdictStyles.verify_first;
 
-  return (
+    return (
     <main className="min-h-screen bg-cream flex flex-col">
       <Navbar />
-      <div className={`${style.bg} border border-border-soft rounded-md p-6 mb-6 flex items-start justify-between`}>
-          <div>
-            <div className="flex items-center gap-2 mb-2">
-              <span className={`w-3 h-3 rounded-full ${style.dot}`} />
-              <span className="text-sm font-medium uppercase tracking-wide text-ink">
-                {style.label}
-              </span>
-            </div>
-            <h1 className="font-serif text-2xl text-ink">{verdict.headline}</h1>
+      <div className="flex-1 px-6 py-12 max-w-3xl mx-auto w-full">
+
+        <div className={`${style.bg} border border-border-soft rounded-md p-6 mb-6`}>
+          <div className="flex items-center gap-2 mb-2">
+            <span className={`w-3 h-3 rounded-full ${style.dot}`} />
+            <span className="text-sm font-medium uppercase tracking-wide text-ink">
+              {style.label}
+            </span>
           </div>
+          <h1 className="font-serif text-2xl text-ink">{verdict.headline}</h1>
         </div>
+
         <div className={`bg-card border border-border-soft border-l-4 ${verdict.worth_applying === "no" ? "border-l-skip" : verdict.worth_applying === "yes" ? "border-l-verified" : "border-l-suspected"} rounded-md p-5 mb-6`}>
           <p className="text-ink-muted leading-relaxed">{verdict.summary}</p>
         </div>
-      <div className="flex-1 px-6 py-12 max-w-3xl mx-auto w-full">
+
         <div className="bg-card border border-border-soft rounded-md flex flex-wrap divide-x divide-border-soft mb-6">
           <div className="px-5 py-4">
             <p className="text-xs text-ink-muted uppercase tracking-wide">Company</p>
@@ -116,9 +117,8 @@ export default function ReportPage() {
             <p className="font-medium text-ink">{job.stipend}</p>
           </div>
         </div>
-      </div>
 
-      <div className="grid sm:grid-cols-3 gap-4 mb-6">
+        <div className="grid sm:grid-cols-3 gap-4 mb-6">
           <div className="bg-card border border-border-soft rounded-md p-5">
             <div className="flex items-center justify-between mb-3">
               <span className="flex items-center gap-2 text-sm font-medium text-verified">
@@ -179,7 +179,27 @@ export default function ReportPage() {
             </ul>
           </div>
         </div>
+
+        <div className="bg-strip rounded-md p-5 mb-10 flex items-start gap-4">
+          <span className="bg-ink text-cream w-8 h-8 rounded-md flex items-center justify-center shrink-0">
+            →
+          </span>
+          <p className="text-ink text-lg pt-1">{verdict.action}</p>
+        </div>
+
+        <div className="flex justify-center">
+          <a
+            href="/"
+            className="bg-ink text-cream font-medium px-6 py-3 rounded-md"
+          >
+            Analyze another internship →
+          </a>
+        </div>
+
+      </div>
       <Footer />
     </main>
   );
+
+   
 }
