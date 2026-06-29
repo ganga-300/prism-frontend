@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export default function Home() {
 
@@ -15,21 +17,7 @@ export default function Home() {
   }
   return (
     <main className="min-h-screen bg-cream">
-      <nav className="flex items-center justify-between px-8 py-5 border-b border-border-soft">
-        <div className="flex items-center gap-2">
-          <div
-            className="w-0 h-0 border-l-[8px] border-r-[8px] border-b-[14px] border-l-transparent border-r-transparent border-b-ink"
-          />
-          <span className="font-sans font-medium text-ink">Prism</span>
-        </div>
-        <div className="hidden sm:flex gap-8 text-ink-muted text-sm">
-          <a href="#how-it-works">How it works</a>
-          <a href="#about">About</a>
-        </div>
-        <button className="bg-ink text-cream text-sm font-medium px-4 py-2 rounded-md">
-          Try free
-        </button>
-      </nav>
+      <Navbar />
 
       <section className="flex flex-col items-center text-center px-6 py-24">
         <span className="text-xs font-medium text-ink-muted border border-border-soft rounded-full px-3 py-1 mb-6">
@@ -211,24 +199,7 @@ export default function Home() {
         </button>
       </section>
 
-      <footer className="px-6 py-8 flex items-center justify-between border-t border-border-soft">
-        <div>
-          <div className="flex items-center gap-2 mb-1">
-            <div
-              className="w-0 h-0 border-l-[6px] border-r-[6px] border-b-[10px] border-l-transparent border-r-transparent border-b-ink"
-            />
-            <span className="font-sans font-medium text-ink text-sm">Prism</span>
-          </div>
-          <p className="text-sm text-ink-muted">
-            Built by a student tired of getting ghosted.
-          </p>
-        </div>
-        <div className="flex gap-6 text-sm text-ink-muted">
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
-          <a href="#">GitHub</a>
-        </div>
-      </footer>
+      <Footer />
       
     </main>
   );
