@@ -117,6 +117,68 @@ export default function ReportPage() {
           </div>
         </div>
       </div>
+
+      <div className="grid sm:grid-cols-3 gap-4 mb-6">
+          <div className="bg-card border border-border-soft rounded-md p-5">
+            <div className="flex items-center justify-between mb-3">
+              <span className="flex items-center gap-2 text-sm font-medium text-verified">
+                <span className="w-2 h-2 rounded-full bg-verified" />
+                Verified
+              </span>
+              <span className="text-xs bg-strip text-ink-muted px-2 py-0.5 rounded-full">
+                {verdict.verified.length}
+              </span>
+            </div>
+            <ul className="space-y-2">
+              {verdict.verified.map((item, i) => (
+                <li key={i} className="flex gap-2 text-sm text-ink-muted">
+                  <span className="w-1.5 h-1.5 rounded-full bg-verified mt-1.5 shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="bg-card border border-border-soft rounded-md p-5">
+            <div className="flex items-center justify-between mb-3">
+              <span className="flex items-center gap-2 text-sm font-medium text-suspected">
+                <span className="w-2 h-2 rounded-full bg-suspected" />
+                Suspected
+              </span>
+              <span className="text-xs bg-strip text-ink-muted px-2 py-0.5 rounded-full">
+                {verdict.suspected.length}
+              </span>
+            </div>
+            <ul className="space-y-2">
+              {verdict.suspected.map((item, i) => (
+                <li key={i} className="flex gap-2 text-sm text-ink-muted">
+                  <span className="w-1.5 h-1.5 rounded-full bg-suspected mt-1.5 shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="bg-card border border-border-soft rounded-md p-5">
+            <div className="flex items-center justify-between mb-3">
+              <span className="flex items-center gap-2 text-sm font-medium text-unchecked">
+                <span className="w-2 h-2 rounded-full bg-unchecked" />
+                Could not check
+              </span>
+              <span className="text-xs bg-strip text-ink-muted px-2 py-0.5 rounded-full">
+                {verdict.could_not_check.length}
+              </span>
+            </div>
+            <ul className="space-y-2">
+              {verdict.could_not_check.map((item, i) => (
+                <li key={i} className="flex gap-2 text-sm text-ink-muted">
+                  <span className="w-1.5 h-1.5 rounded-full bg-unchecked mt-1.5 shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       <Footer />
     </main>
   );
