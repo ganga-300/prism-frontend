@@ -60,9 +60,40 @@ export default function ReportPage() {
 
   const { job, verdict } = data;
 
+  const verdictStyles = {
+    yes: {
+      label: "Worth applying",
+      dot: "bg-verified",
+      bg: "bg-verified/10",
+    },
+    verify_first: {
+      label: "Verify before applying",
+      dot: "bg-suspected",
+      bg: "bg-suspected/10",
+    },
+    no: {
+      label: "Skip this one",
+      dot: "bg-skip",
+      bg: "bg-skip/10",
+    },
+  };
+
+  const style = verdictStyles[verdict.worth_applying] || verdictStyles.verify_first;
+
   return (
     <main className="min-h-screen bg-cream flex flex-col">
       <Navbar />
+      <div className={`${style.bg} border border-border-soft rounded-md p-6 mb-6 flex items-start justify-between`}>
+          <div>
+            <div className="flex items-center gap-2 mb-2">
+              <span className={`w-3 h-3 rounded-full ${style.dot}`} />
+              <span className="text-sm font-medium uppercase tracking-wide text-ink">
+                {style.label}
+              </span>
+            </div>
+            <h1 className="font-serif text-2xl text-ink">{verdict.headline}</h1>
+          </div>
+        </div>
       <div className="flex-1 px-6 py-12 max-w-3xl mx-auto w-full">
         <div className="bg-card border border-border-soft rounded-md flex flex-wrap divide-x divide-border-soft mb-6">
           <div className="px-5 py-4">
