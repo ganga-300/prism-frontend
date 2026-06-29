@@ -64,9 +64,24 @@ export default function ReportPage() {
     <main className="min-h-screen bg-cream flex flex-col">
       <Navbar />
       <div className="flex-1 px-6 py-12 max-w-3xl mx-auto w-full">
-        <p>Company: {job.company_name}</p>
-        <p>Role: {job.role_title}</p>
-        <p>Verdict: {verdict.worth_applying}</p>
+        <div className="bg-card border border-border-soft rounded-md flex flex-wrap divide-x divide-border-soft mb-6">
+          <div className="px-5 py-4">
+            <p className="text-xs text-ink-muted uppercase tracking-wide">Company</p>
+            <p className="font-medium text-ink">{job.company_name}</p>
+          </div>
+          <div className="px-5 py-4">
+            <p className="text-xs text-ink-muted uppercase tracking-wide">Role</p>
+            <p className="font-medium text-ink">{job.role_title}</p>
+          </div>
+          <div className="px-5 py-4">
+            <p className="text-xs text-ink-muted uppercase tracking-wide">Location</p>
+            <p className="font-medium text-ink">{job.location}</p>
+          </div>
+          <div className="px-5 py-4">
+            <p className="text-xs text-ink-muted uppercase tracking-wide">Stipend</p>
+            <p className="font-medium text-ink">{job.stipend}</p>
+          </div>
+        </div>
       </div>
       <Footer />
     </main>
