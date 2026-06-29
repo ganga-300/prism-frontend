@@ -32,8 +32,43 @@ export default function ReportPage() {
       });
   }, [url]);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
+  if (loading) {
+    return (
+      <main className="min-h-screen bg-cream flex flex-col">
+        <Navbar />
+        <div className="flex-1 flex items-center justify-center">
+          <p className="text-ink-muted">Running checks on this listing...</p>
+        </div>
+        <Footer />
+      </main>
+    );
+  }
 
-  return <pre>{JSON.stringify(data, null, 2)}</pre>;
+  if (error || !data || data.status !== "success") {
+    return (
+      <main className="min-h-screen bg-cream flex flex-col">
+        <Navbar />
+        <div className="flex-1 flex items-center justify-center">
+          <p className="text-ink-muted">
+            Something went wrong analyzing this listing. Please try again.
+          </p>
+        </div>
+        <Footer />
+      </main>
+    );
+  }
+
+  const { job, verdict } = data;
+
+  return (
+    <main className="min-h-screen bg-cream flex flex-col">
+      <Navbar />
+      <div className="flex-1 px-6 py-12 max-w-3xl mx-auto w-full">
+        <p>Company: {job.company_name}</p>
+        <p>Role: {job.role_title}</p>
+        <p>Verdict: {verdict.worth_applying}</p>
+      </div>
+      <Footer />
+    </main>
+  );
 }
