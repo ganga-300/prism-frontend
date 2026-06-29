@@ -1,4 +1,18 @@
+"use client";
+
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+
 export default function Home() {
+
+  const [url, setUrl] = useState("");
+  const router = useRouter();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (!url.trim()) return;
+    router.push(`/report?url=${encodeURIComponent(url)}`);
+  }
   return (
     <main className="min-h-screen bg-cream">
       <nav className="flex items-center justify-between px-8 py-5 border-b border-border-soft">
@@ -34,9 +48,11 @@ export default function Home() {
           has been quietly reposted. Built for Indian students.
         </p>
 
-        <form className="mt-8 flex w-full max-w-xl gap-2">
+        <form onSubmit={handleSubmit} className="mt-8 flex w-full max-w-xl gap-2">
           <input
             type="text"
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
             placeholder="Paste an Internshala internship URL..."
             className="flex-1 bg-card border border-border-soft rounded-md px-4 py-3 text-ink placeholder:text-ink-muted outline-none"
           />
