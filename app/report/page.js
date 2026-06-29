@@ -94,6 +94,9 @@ export default function ReportPage() {
             <h1 className="font-serif text-2xl text-ink">{verdict.headline}</h1>
           </div>
         </div>
+        <div className={`bg-card border border-border-soft border-l-4 ${verdict.worth_applying === "no" ? "border-l-skip" : verdict.worth_applying === "yes" ? "border-l-verified" : "border-l-suspected"} rounded-md p-5 mb-6`}>
+          <p className="text-ink-muted leading-relaxed">{verdict.summary}</p>
+        </div>
       <div className="flex-1 px-6 py-12 max-w-3xl mx-auto w-full">
         <div className="bg-card border border-border-soft rounded-md flex flex-wrap divide-x divide-border-soft mb-6">
           <div className="px-5 py-4">
