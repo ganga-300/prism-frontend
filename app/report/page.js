@@ -78,7 +78,7 @@ export default function ReportPage() {
     },
   };
 
-  const style = verdictStyles[verdict.worth_applying] || verdictStyles.verify_first;
+  const style = verdictStyles["verify_first"];
 
     return (
     <main className="min-h-screen bg-cream flex flex-col">
@@ -114,7 +114,7 @@ export default function ReportPage() {
           </div>
           <div className="px-5 py-4">
             <p className="text-xs text-ink-muted uppercase tracking-wide">Stipend</p>
-            <p className="font-medium text-ink">{job.stipend}</p>
+            <p className="font-medium text-ink">{job.stipend || "Not specified"}</p>
           </div>
         </div>
 
